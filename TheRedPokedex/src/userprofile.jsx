@@ -31,9 +31,9 @@ function UserProfile() {
         if (!accessToken) {
           throw new Error('No access token found');
         }
-
+        const host = import.meta.env.VITE_BACKEND_HOST;
         // Fetch user profile
-        const userResponse = await fetch('https://pokedex-backend.onrender.com/api/user/current/', {
+        const userResponse = await fetch(`${host}/api/user/current/`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -45,7 +45,7 @@ function UserProfile() {
         setUser(userData);
 
         // Fetch teams
-        const teamsResponse = await fetch('https://pokedex-backend.onrender.com/api/team/', {
+        const teamsResponse = await fetch(`${host}/api/team/`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },

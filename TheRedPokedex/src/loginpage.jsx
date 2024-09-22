@@ -64,8 +64,9 @@ function LoginPage() {
   const handleLogin = async () => {
     console.log('email:', email);
     console.log('Password:', password);
+    const host = import.meta.env.VITE_BACKEND_HOST;
     try {
-      const response = await fetch('https://pokedex-backend.onrender.com/api/user/login', {
+      const response = await fetch(`${host}/api/user/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

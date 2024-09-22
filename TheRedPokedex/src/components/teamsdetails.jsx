@@ -46,8 +46,9 @@ function UserAndTeamsDetails(props) {
     if (!accessToken) {
       throw new Error('No access token found');
     }
+    const host = import.meta.env.VITE_BACKEND_HOST;
     try {
-      await fetch(`https://pokedex-backend.onrender.com/api/team/${teamId}`, {  // Adjust the endpoint as needed
+      await fetch(`${host}/api/team/${teamId}`, {  // Adjust the endpoint as needed
         method: 'DELETE',
         headers: {
           "Authorization": `Bearer ${accessToken}`,

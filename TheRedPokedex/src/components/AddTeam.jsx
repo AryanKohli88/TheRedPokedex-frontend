@@ -51,9 +51,9 @@ function AddTeam(props) {
         team_name: teamName || "new team",
         pokemonArray: validEntries
       };
-
+      const host = import.meta.env.VITE_BACKEND_HOST;
       // Send the team data to the server
-      const response = await fetch('https://pokedex-backend.onrender.com/api/team/', {
+      const response = await fetch(`${host}/api/team/`, {
         method: 'POST',
         headers: {
           "Content-Type": 'application/json',

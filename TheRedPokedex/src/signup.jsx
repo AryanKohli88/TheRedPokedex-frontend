@@ -54,9 +54,10 @@ function SignUp() {
     console.log('Email:', email);
     console.log('Password:', password);
     console.log('Username:', username);
+    const host = import.meta.env.VITE_BACKEND_HOST;
 
     try {
-      const response = await fetch('https://pokedex-backend.onrender.com/api/user/register', {
+      const response = await fetch(`${host}/api/user/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
