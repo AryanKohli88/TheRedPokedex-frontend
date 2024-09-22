@@ -5,7 +5,7 @@ import React from "react";
 function Animation(props) {
 
   async function getPokemonGif(pokemonName) {
-    const giphyApiKey = 'XHmheN04FesGZUwFhB4PPlRKbOw3nagV';// import.meta.env.GIPHY_API_KEY;
+    const giphyApiKey = import.meta.env.VITE_GIPHY_API_KEY;
     console.log({giphyApiKey});
     // Search for the Pokémon GIF on Giphy
     const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${giphyApiKey}&q=${pokemonName} meme &limit=1`);
