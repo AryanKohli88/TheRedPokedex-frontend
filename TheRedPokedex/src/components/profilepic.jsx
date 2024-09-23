@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function ProfilePic() {
+function ProfilePic(props) {
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -25,8 +25,8 @@ function ProfilePic() {
     position: "fixed",
     top: "20%", // 20% margin from the top
     right: "10%",
-    width: "10vw",
-    height: "20vh",
+    width: "auto",
+    height: "30vh",
     border: "2px solid #000",
     backgroundColor: "#fff",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
@@ -41,7 +41,7 @@ function ProfilePic() {
 
   return (
     <div style={boxStyle}>
-      <img src='../../assets/profilepic.jpeg' alt="Profile" style={imgStyle} />
+      <img src={props.username==='red'? `https://archives.bulbagarden.net/media/upload/thumb/d/d3/Lets_Go_Pikachu_Eevee_Red.png/250px-Lets_Go_Pikachu_Eevee_Red.png` : `https://archives.bulbagarden.net/media/upload/thumb/1/1a/Lets_Go_Pikachu_Eevee_Blue.png/160px-Lets_Go_Pikachu_Eevee_Blue.png`} alt="Profile" style={imgStyle} />
     </div>
   );
 }

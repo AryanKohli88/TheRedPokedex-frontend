@@ -6,14 +6,6 @@ import Animation from "./Animation.jsx"
 import Evolution from "./Evolution.jsx"
 import KnowMore from "./KnowMore.jsx"
 function Card(props){
-    // const pok = props.pokemonName;
-    // console.log(pok);
-    // let response;
-
-    // const getInfo = async (ip)=>{
-    //     response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${ip}`);
-    // }
-
     let exists = false;
     const data = props.pokemonData;
     let id = -1;
@@ -37,9 +29,9 @@ function Card(props){
                 <b>List of Games:</b>
                 <FoundInGames data={data} exists={exists}/>
             </div>
-            <div className="right-animation">
+            {/* <div className="right-animation">
                 <Animation pok_name={props.pokemonName} exists={exists}/>
-            </div>
+            </div> */}
         </div>
         <div className="down">
             <KnowMore name={props.pokemonName} exists={exists} />

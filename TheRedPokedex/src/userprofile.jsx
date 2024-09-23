@@ -5,17 +5,6 @@ import UserProfilePic from './components/profilepic';
 import UserAndTeamsDetails from './components/teamsdetails';
 import { useNavigate } from 'react-router-dom';
 
-/*
-  TODO
-  fix new user reg.
-  test
-  deploy
-  update cv and apply Amex
-  fix handel add and remove teams (UI part)
-  good coding standards
-*/
-
-
 function UserProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -111,7 +100,7 @@ function UserProfile() {
     navigate('/login'); // Redirect to login page
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="searchLabel">Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -141,7 +130,7 @@ function UserProfile() {
         onAddTeam={handleAddTeam}
         onRemoveTeam={handleRemoveTeam}
       />
-      <UserProfilePic />
+      <UserProfilePic username={user.username}/>
     </div>
   );
 }

@@ -91,6 +91,7 @@ function SignUp() {
     }
   };
 
+
   return (
     <div style={pageStyle}>
       <div style={boxStyle}>
@@ -124,6 +125,7 @@ function SignUp() {
           Sign Up
         </button>
         <Link to="/login">Already have an account?</Link>
+        <Link to="/">Home</Link>
       </div>
     </div>
   );

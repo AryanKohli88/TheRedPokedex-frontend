@@ -105,8 +105,9 @@ function LoginPage() {
         <h2>Login</h2>
         <input type="text" placeholder="email" value={email} onChange={(e) => setemail(e.target.value)} style={inputStyle} />
         <input type="password" placeholder="Password" value={password} style={inputStyle} onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit"onClick={handleLogin} style={buttonStyle}>Login</button>
+        <button type="submit" onClick={handleLogin} style={buttonStyle}>Login</button>
         <Link to="/signup">New User?</Link>
+        <Link to="/">Home</Link>
       <div style={instructionsBoxStyle}>
           <p>Test User email: red@gmail.com <br/> Test User password: redpassword  </p>
         </div>
